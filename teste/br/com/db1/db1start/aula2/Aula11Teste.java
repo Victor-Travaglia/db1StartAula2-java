@@ -103,4 +103,26 @@ public class Aula11Teste {
 		
 		Assert.assertNotEquals(numeros, aula11.listaDeParesImpares(numeros));
 	}
+	
+	@Test
+	public void deveRetornarUmalistaDeNomesSeparadosPelaInicial() {
+		
+		Aula11 aula11 = new Aula11();
+		List<String> nomes = new ArrayList<String>();
+		nomes.add("Maria");
+		nomes.add("Ana");
+		nomes.add("Roberval");
+		nomes.add("Jose");
+		nomes.add("Wagner");
+		nomes.add("Ana Laura");
+		nomes.add("Clecio");
+		nomes.add("Rodolfo");
+		nomes.add("José");
+		nomes.add("Rodolpho");
+		nomes.add("Marcos");
+		nomes.add("Vagner");
+		nomes.add("Joaldo");
+		
+		Assert.assertNotEquals(nomes, aula11.listaDeNomesSeparadosPelaInicial(nomes));
+	}
 }

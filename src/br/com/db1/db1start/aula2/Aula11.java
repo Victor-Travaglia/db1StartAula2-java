@@ -77,17 +77,47 @@ public class Aula11 {
 		return parImpar;
 	}
 	
-	/*public List<List<String>> listaDeNomesSeparadosPelaInicial(List<String> nomes) {
+	public List<List<String>> listaDeNomesSeparadosPelaInicial(List<String> nomes) {
 		nomes = new ArrayList<String>(nomes);
-		List<String> a = new ArrayList<String>();
-		List<String> c = new ArrayList<String>();
-		List<String> j = new ArrayList<String>();
-		List<String> m = new ArrayList<String>();
-		List<String> r = new ArrayList<String>();
-		List<String> w = new ArrayList<String>();
+		List<String> nomesA = new ArrayList<String>();
+		List<String> nomesC = new ArrayList<String>();
+		List<String> nomesJ = new ArrayList<String>();
+		List<String> nomesM = new ArrayList<String>();
+		List<String> nomesR = new ArrayList<String>();
+		List<String> nomesW = new ArrayList<String>();
+		List<List<String>> listaDeNomes = new ArrayList<List<String>>();
 		for (String nome : nomes) {
-		}	
+			if(nome.charAt(0) == 'A') {
+				nomesA.add(nome);
+			}
+			else if(nome.charAt(0) == 'C') {
+				nomesC.add(nome);
+			}
+			else if(nome.charAt(0) == 'J') {
+				nomesJ.add(nome);
+			}
+			else if(nome.charAt(0) == 'M') {
+				nomesM.add(nome);
+			}
+			else if(nome.charAt(0) == 'R') {
+				nomesR.add(nome);
+			}
+			else if(nome.charAt(0) == 'W') {
+				nomesW.add(nome);
+			}
+		}
+		Collections.sort(nomesA);
+		Collections.sort(nomesC);
+		Collections.sort(nomesJ);
+		Collections.sort(nomesM);
+		Collections.sort(nomesR);
+		Collections.sort(nomesW);
+		listaDeNomes.add(nomesA);
+		listaDeNomes.add(nomesC);
+		listaDeNomes.add(nomesJ);
+		listaDeNomes.add(nomesM);
+		listaDeNomes.add(nomesR);
+		listaDeNomes.add(nomesW);
+		return listaDeNomes;
 	}
-	*/
-	
 }
