@@ -2,6 +2,8 @@ package br.com.db1.db1start.aula2;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -63,7 +65,7 @@ public class Aula11Teste {
 		cores.add("azul");
 		cores.add("branco");
 		
-		Assert.assertNotEquals(cores, aula11.ordenarCores(cores));
+		Assert.assertEquals(cores, aula11.ordenarCores(cores));
 	}
 	
 	@Test
@@ -75,7 +77,7 @@ public class Aula11Teste {
 		cores.add("vermelho");
 		cores.add("verde");
 		
-		Assert.assertNotEquals(cores, aula11.removeCor(cores, "preto"));
+		Assert.assertEquals(cores, aula11.removeCor(cores, "preto"));
 	}
 	
 	@Test
@@ -89,7 +91,7 @@ public class Aula11Teste {
 		itens.add("uva");
 		itens.add("pera");
 		
-		Assert.assertNotEquals(itens, aula11.ordenarItens(itens));
+		Assert.assertEquals(itens, aula11.ordenarItens(itens));
 	}
 	
 	@Test
@@ -124,5 +126,83 @@ public class Aula11Teste {
 		nomes.add("Joaldo");
 		
 		Assert.assertNotEquals(nomes, aula11.listaDeNomesSeparadosPelaInicial(nomes));
+	}
+	
+	@Test
+	public void deveRetornarListaSeparadaMap() {
+		Aula11 aula11 = new Aula11();
+		List<String> nomes = new ArrayList<>();
+		
+		nomes.add("Maria");
+		nomes.add("Ana");
+		nomes.add("Roberval");
+		nomes.add("Jose");
+		nomes.add("Wagner");
+		nomes.add("Ana Laura");
+		nomes.add("Clecio");
+		nomes.add("Rodolfo");
+		nomes.add("José");
+		nomes.add("Rodolpho");
+		nomes.add("Marcos");
+		nomes.add("Vagner");
+		nomes.add("Joaldo");
+
+		
+		Map<String, List<String>> retorno = aula11.dividirPalavrasMap(nomes); 
+		
+		Assert.assertNotEquals(nomes, aula11.dividirPalavrasMap(nomes));
+	}
+	
+	@Test
+	public void deveRetornarSomaDeNumerosDeUmaLista() {
+		
+		Aula11 aula11 = new Aula11();
+		List<Double> numeros = new ArrayList<Double>();
+		numeros.add(2.0);
+		numeros.add(4.0);
+		numeros.add(6.0);
+		
+		Assert.assertEquals(4, aula11.mediaListaDeDouble(numeros), 0);
+	}
+	
+	@Test
+	public void deveRetornarMenorNumeroDaLista() {
+		
+		Aula11 aula11 = new Aula11();
+		Integer numero = -20;
+		List<Integer> numeros = new ArrayList<Integer>();
+		numeros.add(10);
+		numeros.add(20);
+		numeros.add(-20);
+		numeros.add(50);
+		
+		Assert.assertEquals(numero, aula11.menorValorDaListaDeInteger(numeros), 0);
+	}
+	
+	@Test
+	public void deveRetornarMaiorNumeroDaLista() {
+		
+		Aula11 aula11 = new Aula11();
+		Integer numero = 80;
+		List<Integer> numeros = new ArrayList<Integer>();
+		numeros.add(10);
+		numeros.add(20);
+		numeros.add(80);
+		numeros.add(-20);
+		numeros.add(50);
+		
+		Assert.assertEquals(numero, aula11.maiorValorDaListaDeInteger(numeros), 0);
+	}
+	
+	@Test
+	public void deveRetornarUmaListaSemImpares() {
+		
+		Aula11 aula11 = new Aula11();
+		List<Integer> numeros = new ArrayList<Integer>();
+		for(int i = 0; i <= 10; i++) {
+			numeros.add(i);
+		}
+		
+		Assert.assertEquals(numeros, aula11.removerImparesDaListaDeInteger(numeros));
 	}
 }
